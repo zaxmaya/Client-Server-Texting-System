@@ -1,45 +1,41 @@
-Overview
-This Java chat application comprises two main components: Server.java and Client.java. The Server handles incoming connections from Clients, managing communication between them. The Client establishes a connection to the Server and enables users to send and receive messages.
+## Overview
+This Java chat application is comprised of two main components: `Server.java` and `Client.java`. The server is responsible for handling incoming connections from clients and managing communication between them. The client establishes a connection to the server and allows users to send and receive messages.
 
-Components
-Server.java
-Description:
+## Server.java
+**Description**: This class sets up a server socket and listens for incoming client connections. It uses an `ExecutorService` for handling multiple client threads concurrently. The server maintains a list of active client handlers to manage client communications.
 
-Sets up a server socket and listens for incoming client connections.
-Uses ExecutorService for handling multiple client threads concurrently.
-Maintains a list of active client handlers to manage client communications.
-Key Features:
+**Key Features**:
+  - Concurrent client handling with thread pool.
+  - Synchronized list for managing client handlers.
+  - Handling of client messages and broadcasting to other clients.
 
-Concurrent client handling with a thread pool.
-Synchronized list for managing client handlers.
-Handling of client messages and broadcasting them to other clients.
-Client.java
-Description:
+## Client.java
+**Description**: This class represents the client-side application that connects to the server. It is responsible for sending and receiving messages from the server.
 
-Represents the client-side application that connects to the Server.
-Handles sending and receiving messages from the Server.
-Key Features:
+**Key Features**:
+  - Connection setup with the server using IP address and port.
+  - Sending messages to the server.
+  - Receiving messages from the server.
 
-Connection setup with the Server using IP address and port.
-Sending messages to the Server.
-Receiving messages from the Server.
-Requirements
-Java Development Kit (JDK)
-Network access for client-server communication
-How to Run
-Server:
+## Requirements
+- Java Development Kit (JDK)
+- Network access for client-server communication
 
-Compile: javac Server.java
-Run: java Server
-The Server will start and listen for client connections.
-Client:
+## How to Run
+1. **Server**:
+   - Compile: `javac Server.java`
+   - Run: `java Server`
+   - The server will start and listen for client connections.
 
-Compile: javac Client.java
-Run: java Client
-Upon running, enter the Server's IP address and port number to connect.
-Usage
-Server: Run the Server program first. It will start and wait for Clients to connect.
-Client: Run the Client program and connect to the Server using the correct IP address and port. Once connected, start sending messages to the Server, which will be broadcast to other connected clients.
-Notes
-Ensure the Server is running before Clients attempt to connect.
-The Server and Clients must be on the same network for local communication, or the Server must be publicly accessible for remote communication
+2. **Client**:
+   - Compile: `javac Client.java`
+   - Run: `java Client`
+   - Upon running, enter the server's IP address and port number to connect.
+
+## Usage
+- **Server**: Run the server program first. It will start and wait for clients to connect.
+- **Client**: Run the client program and connect to the server using the correct IP address and port. Once connected, you can start sending messages to the server, which will be broadcast to other connected clients.
+
+## Notes
+- Ensure that the server is running before clients attempt to connect.
+- The server and clients must be on the same network for local communication, or the server must be publicly accessible for remote communication.
