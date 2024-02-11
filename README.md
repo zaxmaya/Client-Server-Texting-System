@@ -1,5 +1,5 @@
 ## Overview
-This Java chat application is comprised of two main components: `Server.java` and `Client.java`. The server is responsible for handling incoming connections from clients and managing communication between them. The client establishes a connection to the server and allows users to send and receive messages.
+This Java chat application is comprised of two main components: `Server.java` and `Client.java`. The server is responsible for handling incoming connections from clients and managing communication between them. The client establishes a connection to the server and allows users to send and receive messages and images.
 
 ## Server.java
 **Description**: This class sets up a server socket and listens for incoming client connections. It uses an `ExecutorService` for handling multiple client threads concurrently. The server maintains a list of active client handlers to manage client communications.
